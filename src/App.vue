@@ -1,10 +1,11 @@
 <script>
 import headerApp from './components/headerApp.vue';
+import mainSectionApp from './components/mainSectionApp.vue';
+import footerApp from './components/footerApp.vue';
 
 export default {
   components: {
     headerApp,
-    jumbotronApp,
     mainSectionApp,
     footerApp,
   }
@@ -13,7 +14,6 @@ export default {
 
 <template>
   <headerApp />
-  <jumbotronApp />
   <mainSectionApp />
   <footerApp />
 </template>
