@@ -52,9 +52,6 @@ export default {
             </div>
         </div>
     </div>
-    <div class="container">
-
-    </div>
 </template>
 <style scoped lang="scss">
 .card_items {

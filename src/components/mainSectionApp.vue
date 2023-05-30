@@ -13,7 +13,10 @@ export default {
 }
 </script>
 <template>
+    <!--container section1 cards -->
     <section1 />
+    <!-- container 2 pseudojumbotron -->
+    <section2 />
 </template>
 <style scoped lang="scss">
 @use '../style.scss'
