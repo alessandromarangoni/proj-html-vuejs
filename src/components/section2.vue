@@ -1,10 +1,33 @@
 <script>
 import image from '../assets/business-people-working-together-on-project-and-5FHSKBL.jpg'
+import expertImage1 from '../assets/DRY-1-790x592.jpg'
+import expertImage2 from '../assets/221bf0b7-8134-43bb-936a-5acbe42db64a-790x592.jpg'
+import expertImage3 from '../assets/z1el4c4p-790x592.jpg'
+import hoverimage1 from '../assets/dry-red.jpg'
+import hoverimage2 from '../assets/proposalRed.jpg'
+import hoverimage3 from '../assets/templateRed.jpg'
 export default {
     name: "section2",
     data() {
         return {
-            image
+            image,
+            cardSlider: [{
+                img: expertImage1,
+                imgHover: hoverimage1,
+                title: 'Purinky product',
+                category: 'uncategorized'
+            }, {
+                img: expertImage2,
+                imgHover: hoverimage2,
+                title: 'Purinky product',
+                category: 'uncategorized'
+            },
+            {
+                img: expertImage3,
+                imgHover: hoverimage3,
+                title: 'Purinky product',
+                category: 'uncategorized'
+            }],
         }
     }
 }
@@ -16,7 +39,7 @@ export default {
                 <div class="col-10">
                     <div class="row">
                         <div class="col-7 justify-content-center p-0">
-                            <img :src="this.image" alt="" class="">
+                            <img :src="this.image" alt="" class="img-fluid">
                         </div>
                         <div class=" col-5 bg-primary m-0">
                             <div>
@@ -48,6 +71,38 @@ export default {
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-10">
+                    <div class="d-flex">
+                        <div>---</div><span>testo</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <h3>placeHolder</h3>
+                        <div class="">
+                            <button> left</button>
+                            <button>right</button>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-contet-between ">
+                        <div v-for="item in this.cardSlider">
+                            <div class="position-relative card_wrapper p-3">
+                                <div class="position-absolute item">
+                                    <img :src="item.img" alt="" class="prova">
+                                    <div class="card_pos">
+                                        <h3 class="">{{ item.title }}</h3>
+                                        <span class="">{{ item.category }}</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img :src="item.imgHover" alt="" class=" prova">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 </template>
 <style scoped lang="scss">
@@ -55,5 +110,39 @@ export default {
     width: 100px;
     right: 0;
     bottom: 0
+}
+
+.card_wrapper {
+    max-width: 390px;
+
+    img: {
+        width: 390px;
+    }
+
+    img:hover {
+        opacity: 0;
+    }
+
+    .item:hover {
+        img: {
+            opacity: 0;
+        }
+
+        .card_pos {
+            opacity: 1
+        }
+    }
+
+    .card_pos {
+        bottom: 0;
+        position: absolute;
+        line-height: 3rem;
+        opacity: 0;
+    }
+}
+
+.prova {
+    width: 100%;
+    height: 100%;
 }
 </style>
