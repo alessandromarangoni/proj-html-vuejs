@@ -88,14 +88,14 @@ export default {
                         <div v-for="item in this.cardSlider">
                             <div class="position-relative card_wrapper p-3">
                                 <div class="position-absolute item">
-                                    <img :src="item.img" alt="" class="prova">
+                                    <img :src="item.img" alt="" class="item_size">
                                     <div class="card_pos">
                                         <h3 class="">{{ item.title }}</h3>
                                         <span class="">{{ item.category }}</span>
                                     </div>
                                 </div>
                                 <div>
-                                    <img :src="item.imgHover" alt="" class=" prova">
+                                    <img :src="item.imgHover" alt="" class=" item_size">
                                 </div>
                             </div>
                         </div>
@@ -141,7 +141,7 @@ export default {
     }
 }
 
-.prova {
+.item_size {
     width: 100%;
     height: 100%;
 }
