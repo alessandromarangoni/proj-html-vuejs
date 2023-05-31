@@ -2,6 +2,8 @@
 import costumersImg1 from '../assets/oliver-ragfelt-488196-unsplash.jpg'
 import costumersImg2 from '../assetS/12679.jpg'
 import costumersImg3 from '../assets/oliver-ragfelt-488196-2.jpg'
+import articleImg1 from '../assets/startup-business-people-and-strategy-board-PAJ3P9K-1390x1042.jpg'
+import articleImg2 from '../assets/business-people-working-together-on-project-and-5FHSKBL-1390.jpg'
 export default {
     name: "section3",
     data() {
@@ -22,6 +24,20 @@ export default {
                 text: "When, while lovely valley teems with vapour around meand eridian sun strikes the upper impenetrable foliage of my trees, and but a thousand unknown plants are noticed by when I hear the buzz of the little.",
                 name: 'Vera Duncan',
                 company: 'amazon inc'
+            }],
+            articles: [{
+                img: articleImg1,
+                date: 'july 4, 2019',
+                author: 'by paul',
+                title: 'Canadian Consulting Firm acquired by UK Giant',
+                argument: 'When, while lovely valley teems with vapour around meand eridian sun strikes the upper impenetrable foliage of my trees, and but a ...'
+            },
+            {
+                img: articleImg2,
+                date: 'july 19, 2020',
+                author: 'by paul',
+                title: 'Canadian Consulting Firm acquired by UK Giant',
+                argument: 'When, while lovely valley teems with vapour around meand eridian sun strikes the upper impenetrable foliage of my trees, and but a ...'
             }]
         }
     }
@@ -56,6 +72,42 @@ export default {
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-10 pt-5">
+                    <div>
+                        <div class="d-flex">
+                            <div>---</div>
+                            <span>placeHolder</span>
+                        </div>
+
+                        <div class="d-flex">
+                            <h3>THE RECENT NEWS YOU MUST READ IT</h3>
+                            <button>
+                                button
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <template v-for="item in this.articles">
+                            <div
+                                class=" m-3 custom_container d-flex bg-primary position-relative flex-column align-items-end">
+                                <img :src="item.img" alt="" class="img-fluid">
+                                <div class="text_container bg-secondary position-absolute">
+                                    <div>
+                                        <span><small>{{ item.date }}</small></span>
+                                        <span><small>{{ ' ' + item.author }}</small></span>
+                                    </div>
+                                    <h3>{{ item.title }}</h3>
+                                    <p>{{ item.argument }}</p>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 </template>
 <style scoped lang="scss">
@@ -84,5 +136,16 @@ export default {
     left: 0;
     opacity: 0;
     z-index: 1;
+}
+
+.custom_container {
+    width: calc(100%);
+
+
+    .text_container {
+        max-width: 80%;
+        bottom: 0;
+        transform: translate(0, 50%);
+    }
 }
 </style>
