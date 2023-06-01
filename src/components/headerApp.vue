@@ -11,7 +11,7 @@ export default {
             logo: logo,
             headerLink: [{
                 name: "Home",
-                link: "/"
+                link: "7"
             }, {
                 name: "about",
                 link: "/"
@@ -43,7 +43,7 @@ export default {
                 <div class="col-5 bg-alert">
                     <ul class="d-flex justify-content-between text-right">
                         <li v-for="link in this.headerLink">
-                            <a :href="link.link">{{ link.name }}</a>
+                            <a :href="link.link" class="text-white">{{ link.name }}</a>
                         </li>
                     </ul>
                 </div>
