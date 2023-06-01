@@ -41,47 +41,49 @@ export default {
                         <div class="col-7 justify-content-center p-0">
                             <img :src="this.image" alt="" class="img-fluid">
                         </div>
-                        <div class=" col-5 bg-primary m-0">
-                            <div>
-                                <div></div>
-                                <span></span>
+                        <div class=" col-5 d-flex flex-column justify-content-center align-items-start ps-3 m-0">
+                            <div class="d-flex align-items-center ps-3">
+                                <div class="small_separe"></div>
+                                <span class="ps-3 text-white"><small>ABOUT US</small></span>
                             </div>
-                            <h4>placeHolder</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem culpa iste aspernatur,
+                            <h4 class="text-white p-3">placeHolder</h4>
+                            <p class="text-white p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem culpa
+                                iste aspernatur,
                                 delectus
                                 voluptas neque, est sunt nihil maiores consequuntur consequatur voluptatum qui veritatis vel
                                 cupiditate modi hic dolorum animi!</p>
                         </div>
                     </div>
                     <div class="row position-relative">
-                        <div class="col10 bg-secondary d-flex p-5 justify-content-center">
-                            <div class="row d-flex p-5 justify-content-around">
-                                <div class="col-3 d-flex align-items-center text-center">
-                                    <h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h4>
+                        <div class="col10 d-flex justify-content-center call_to_action_container">
+                            <div class="row d-flex justify-content-around p-4">
+                                <div class="col-4  p-3 d-flex align-items-center text-center">
+                                    <h4>WE HELP TO DELIVER THE BUISNESS CASE</h4>
                                 </div>
-                                <div class="col-3 d-flex align-items-center text-center">
-                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur laboriosam esse
-                                        quibusdam fuga blanditiis. Doloribus eius, corporis nesciunt perspiciatis, mollitia
-                                        cupiditate magnam porro facere consequatur voluptate omnis nihil nam qui.</p>
+                                <div class="col-4 p-3 d-flex align-items-center text-center">
+                                    <p> <small>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
+                                            laboriosam esse
+                                        </small>
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                        <button class="position-absolute call-to-action">button</button>
+                        <button class="position-absolute call-to-action"><small>GET STARTED</small></button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="container">
-            <div class="row">
-                <div class="col-10">
+            <div class="row pt-5">
+                <div class="col-10 pt-5">
                     <div class="d-flex">
-                        <div>---</div><span>testo</span>
+                        <div class="small_separe"></div><span class="ms-3 text-white"><small>PROJECT</small> </span>
                     </div>
                     <div class="d-flex justify-content-between">
-                        <h3>placeHolder</h3>
+                        <h4 class="text-white pt-3">OUR EXPERT TRUSTED CONSULTANT <br>HELP CLIENT</h4>
                         <div class="">
-                            <button> left</button>
-                            <button>right</button>
+                            <button><i class="fa-solid fa-arrow-left"></i></button>
+                            <button class="ms-3"><i class="fa-solid fa-arrow-right"></i></button>
                         </div>
                     </div>
                     <div class="d-flex justify-contet-between ">
@@ -90,8 +92,8 @@ export default {
                                 <div class="position-absolute item">
                                     <img :src="item.img" alt="" class="item_size">
                                     <div class="card_pos">
-                                        <h3 class="">{{ item.title }}</h3>
-                                        <span class="">{{ item.category }}</span>
+                                        <h3 class="text-white">{{ item.title }}</h3>
+                                        <span class="text-white">{{ item.category }}</span>
                                     </div>
                                 </div>
                                 <div>
@@ -106,10 +108,31 @@ export default {
     </section>
 </template>
 <style scoped lang="scss">
+@use'variables.scss' as *;
+
+.section_2 {
+    background-color: $mainColor;
+}
+
+.call_to_action_container {
+    background-color: $azule;
+}
+
 .call-to-action {
-    width: 100px;
+    max-width: 200px;
     right: 0;
-    bottom: 0
+    bottom: 0;
+    border: 0;
+    color: white;
+    background-color: #F81D39;
+    padding: 0.5rem 1.5rem;
+}
+
+button {
+    border: 1px solid rgb(255, 149, 0);
+    padding: .5rem .8rem;
+    background-color: $mainColor;
+
 }
 
 .card_wrapper {

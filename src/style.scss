@@ -4,17 +4,17 @@
     padding: 0;
 }
 
-// variables
-// Bacground colors
+// general
+a {
+    text-decoration: none;
+}
 
+li {
+    list-style: none;
+}
 
-
-
-
-
-// text colors 
-
-
-// fill colors
-
-// border colors
+.small_separe {
+    border-bottom: 2px solid #39FFBF;
+    width: 40px;
+    height: 16px;
+}

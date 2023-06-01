@@ -51,20 +51,20 @@ export default {
         <div class="container">
             <div class="row d-flex justify-content-end">
                 <div class="col-6 d-flex justify-content-end">
-                    <span class="p-3">placeHolder</span>
-                    <div class="p-3">------</div>
+                    <span class="p-3 text-white"><small>TESTIMONIALS</small></span>
+                    <div class="m-3 small_separe"></div>
                 </div>
             </div>
         </div>
         <div class="container-fluid">
-            <div class="row d-flex justify-content-end">
-                <div class="col-10 bg-primary">
+            <div class="row d-flex justify-content-end ">
+                <div class="col-11 col-xl-9 bg-white">
                     <div class="d-flex justify-content-between">
                         <template v-for="item in this.costumerSays">
-                            <div class="p-5 position-relative costumer_wrapper">
+                            <div class="p-4 p-xl-5 mb-3 position-relative costumer_wrapper">
                                 <div class="text_wrapper">
-                                    <p> {{ item.text }}</p>
-                                    <h4>{{ item.name }}</h4>
+                                    <p><small> {{ item.text }}</small></p>
+                                    <h5>{{ item.name }}</h5>
                                     <small>{{ item.company }}</small>
                                 </div>
                                 <img :src="item.img" alt="" class="img-fluid position-absolute costumer-img">
@@ -79,30 +79,30 @@ export default {
                 <div class="col-10 pt-5">
                     <div>
                         <div class="d-flex">
-                            <div>---</div>
-                            <span>placeHolder</span>
+                            <div class="small_separe"></div>
+                            <span class="text-white ms-3"><small>BLOG</small></span>
                         </div>
 
-                        <div class="d-flex">
-                            <h3>THE RECENT NEWS YOU MUST READ IT</h3>
-                            <button>
-                                button
+                        <div class="d-flex justify-content-between">
+                            <h3 class="text-white">THE RECENT NEWS YOU MUST READ IT</h3>
+                            <button class="custom_button1 me-3 text-white">
+                                <small>WIEW ALL</small>
                             </button>
                         </div>
                     </div>
 
                     <div class="d-flex justify-content-between mb-5">
                         <template v-for="item in this.articles">
-                            <div class=" m-3 custom_container d-flex bg-primary position-relative flex-column
-                                                                        align-items-end mb-5">
+                            <div
+                                class=" m-3 custom_container d-flex bg-primary position-relative flex-column                                                                                                                                                                 align-items-end mb-5">
                                 <img :src="item.img" alt="" class="img-fluid">
-                                <div class="text_container bg-secondary position-absolute">
-                                    <div>
-                                        <span><small>{{ item.date }}</small></span>
-                                        <span><small>{{ ' ' + item.author }}</small></span>
+                                <div class="text_container bg-white position-absolute">
+                                    <div class="pt-2 mx-5">
+                                        <span class="text_red "><small>{{ item.date }}</small></span>
+                                        <span class="text_red ms-2"><small>{{ ' ' + item.author }}</small></span>
                                     </div>
-                                    <h3>{{ item.title }}</h3>
-                                    <p>{{ item.argument }}</p>
+                                    <h4 class="px-5 pt-2">{{ item.title }}</h4>
+                                    <p class="px-5 pt-2">{{ item.argument }}</p>
                                 </div>
                             </div>
                         </template>
@@ -113,21 +113,40 @@ export default {
         <div class="container-fluid pre-footer mt-5">
             <div class="row d-flex justify-content-center mt-5">
                 <div class="col-6 mt-5 p-5 text-center">
-                    <h3>LET'S TALK ABOUT WORK</h3>
-                    <p>a wanderful serenity has taken possession Far far away. behind the word mountain</p>
-                    <button>button</button>
+                    <h3 class="text-white">LET'S TALK ABOUT WORK</h3>
+                    <p class="text-white">a wanderful serenity has taken possession Far far away. behind the word mountain
+                    </p>
+                    <button class="button_custom-2">GET STARTED</button>
                 </div>
             </div>
         </div>
     </section>
 </template>
 <style scoped lang="scss">
+@use'variables.scss' as *;
+
+section {
+    background-color: $mainColor
+}
+
+.custom_button1 {
+    background-color: $azule;
+    padding: .5rem 1.5rem;
+    border: 0;
+}
+
+.button_custom-2 {
+    background-color: $mainColor;
+    padding: .5rem 1.5rem;
+    border: 0;
+}
+
 .costumer_wrapper {
     width: calc(100% / 3);
 
     &:hover {
         .costumer-img {
-            opacity: .5;
+            opacity: 1;
             z-index: 0;
         }
 
@@ -140,6 +159,10 @@ export default {
     }
 }
 
+.text_red {
+    color: $textRed
+}
+
 .costumer-img {
     width: 350px;
     padding: .8rem;
@@ -150,11 +173,11 @@ export default {
 }
 
 .custom_container {
-    width: calc(100%);
+    width: 100%;
 
 
     .text_container {
-        max-width: 80%;
+        max-width: 90%;
         bottom: 0;
         transform: translate(0, 50%);
     }

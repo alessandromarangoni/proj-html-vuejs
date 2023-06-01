@@ -47,25 +47,28 @@ export default {
             <div class="row">
                 <div class="col ">
                     <div class="d-flex justify-content-between align-items-center">
-                        <div><img :src="this.logo" alt=""></div>
+                        <div><img :src="this.logo" alt="" class="w50 "></div>
                         <div>
                             <ul class="d-flex">
-                                <li v-for="item in footerLink" class="p-2"><a :href="item.link">{{ item.name }}</a></li>
+                                <li v-for="item in footerLink" class="p-2"><a class="text-white" :href="item.link">{{
+                                    item.name }}</a></li>
                             </ul>
                         </div>
                         <div>
                             <template v-for="items in sociaLink">
-                                <span> <a href=""> <i class="fa-brands " :class="'' + items.icons"></i> </a></span>
+                                <span> <a class="text-white" href=""> <i class="fa-brands p-2"
+                                            :class="'' + items.icons"></i>
+                                    </a></span>
                             </template>
                         </div>
                     </div>
                     <div class="footer_line mb-3"></div>
                     <div class="d-flex justify-content-between align-items-end">
                         <div>
-                            <span class="d-block"><small><a href="">Term of use</a></small></span>
-                            <span><small><a href="">Privacy Enviromental policy</a></small></span>
+                            <span class="d-block"><small><a class="text-white" href="">Term of use</a></small></span>
+                            <span><small><a class="text-white" href="">Privacy Enviromental policy</a></small></span>
                         </div>
-                        <div><span><small><a href="">Copyright © 2020 Phlox Consulting. All Rights
+                        <div><span><small><a class="text-white" href="">Copyright © 2020 Phlox Consulting. All Rights
                                         Reserved.</a></small></span>
                         </div>
                     </div>
@@ -75,6 +78,16 @@ export default {
     </section>
 </template>
 <style scoped lang="scss">
+@use'variables.scss' as *;
+
+section {
+    background-color: $mainColor;
+}
+
+img {
+    width: 50%;
+}
+
 li {
     list-style: none;
 
@@ -85,6 +98,6 @@ li {
 
 .footer_line {
     height: 1px;
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.172);
 }
 </style>
