@@ -17,9 +17,10 @@ export default {
   <mainSectionApp />
   <footerApp />
   <div class="message_icon_container d-flex justify-content-between align-items-center">
-    <div class="return_up d-flex justify-content-center align-items-center"><a href="#container">f</a></div>
+    <div class="return_up d-flex justify-content-center align-items-center"><a class="text-white" href="#container"><i
+          class="fa-solid fa-arrow-up"></i></a></div>
     <div class="message_icon d-flex justify-content-center align-items-center">
-      ciao
+      <i class="fa-regular fa-message"></i>
     </div>
   </div>
 </template>
@@ -38,14 +39,14 @@ export default {
     height: 50%;
     width: 50%;
     border-radius: 50%;
-    background-color: aqua;
+    background-color: #527CEB;
   }
 
   .return_up {
     height: 40%;
     width: 40%;
     border-radius: 50%;
-    background-color: rgb(26, 255, 0);
+    background-color: rgb(154, 154, 154);
   }
 }
 </style>
