@@ -126,7 +126,12 @@ export default {
 @use'variables.scss' as *;
 
 section {
-    background-color: $mainColor
+    background-color: $mainColor ;
+    background-image: url(https://demo.phlox.pro/consulting-2/wp-content/uploads/sites/113/2019/06/Group_7543.svg);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position-x: -10%;
+    background-position-y: 60%
 }
 
 .custom_button1 {

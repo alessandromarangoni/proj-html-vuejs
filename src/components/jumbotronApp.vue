@@ -46,10 +46,25 @@ export default {
     }
 
     button {
-        background-color: $azule;
+        animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation-delay: .5s;
         border: 0;
         padding: .5rem 2rem;
         color: #13543f;
+
+        @keyframes scale-in-center {
+            0% {
+                transform: scale(0);
+                background-color: $azule;
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+                background-color: $azule;
+                opacity: 1;
+            }
+        }
     }
 
     .jumbo_read_more {

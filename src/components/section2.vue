@@ -46,7 +46,7 @@ export default {
                                 <div class="small_separe"></div>
                                 <span class="ps-3 text-white"><small>ABOUT US</small></span>
                             </div>
-                            <h4 class="text-white p-3">placeHolder</h4>
+                            <h1 class="text-white p-3">WE MAKE YOUR STRATEGY WORK</h1>
                             <p class="text-white p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem culpa
                                 iste aspernatur,
                                 delectus
@@ -92,8 +92,8 @@ export default {
                                 <div class="position-absolute item">
                                     <img :src="item.img" alt="" class="item_size">
                                     <div class="card_pos">
-                                        <h3 class="text-white">{{ item.title }}</h3>
-                                        <span class="text-white">{{ item.category }}</span>
+                                        <h3 class="text-white ps-3">{{ item.title }}</h3>
+                                        <span class="text-white ps-3">{{ item.category }}</span>
                                     </div>
                                 </div>
                                 <div>
@@ -112,6 +112,12 @@ export default {
 
 .section_2 {
     background-color: $mainColor;
+    background-image: url(https://demo.phlox.pro/consulting-2/wp-content/uploads/sites/113/2019/06/Group_7543.svg);
+    background-size: contain;
+    background-position-x: right;
+    background-position-y: -170%;
+    background-size: 60%;
+    background-repeat: no-repeat;
 }
 
 .call_to_action_container {
