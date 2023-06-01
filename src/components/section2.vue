@@ -93,11 +93,11 @@ export default {
                                     <img :src="item.img" alt="" class="item_size">
                                     <div class="card_pos">
                                         <h3 class="text-white ps-3">{{ item.title }}</h3>
-                                        <span class="text-white ps-3">{{ item.category }}</span>
+                                        <span class="text-white ps-3 pb-3 d-block">{{ item.category }}</span>
                                     </div>
                                 </div>
-                                <div>
-                                    <img :src="item.imgHover" alt="" class=" item_size">
+                                <div class="">
+                                    <img :src="item.imgHover" alt="" class="item_hover_size">
                                 </div>
                             </div>
                         </div>
@@ -173,5 +173,10 @@ button {
 .item_size {
     width: 100%;
     height: 100%;
+}
+
+.item_hover_size {
+    width: 101%;
+    height: 101%;
 }
 </style>
