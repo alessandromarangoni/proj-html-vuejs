@@ -37,9 +37,8 @@ export default {
     background-image: url(https://demo.phlox.pro/consulting-2/wp-content/uploads/sites/113/2019/06/Group_7543.svg);
     background-repeat: no-repeat;
     background-position-x: -5%;
-    background-position-y: 290%;
-    background-size: 60%;
-    background-attachment: fixed;
+    background-position-y: -550%;
+    background-size: 101%;
 
     h1 {
         font-size: 55px;
