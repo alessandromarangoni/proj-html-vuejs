@@ -43,11 +43,11 @@ export default {
 </script>
 <template>
     <section>
-        <div class="container">
+        <div class="container pt-4">
             <div class="row">
                 <div class="col ">
                     <div class="d-flex justify-content-between align-items-center">
-                        <div><img :src="this.logo" alt="" class="w50 "></div>
+                        <div><img :src="this.logo" alt="" class=""></div>
                         <div>
                             <ul class="d-flex">
                                 <li v-for="item in footerLink" class="p-2"><a class="text-white" :href="item.link">{{
@@ -56,7 +56,7 @@ export default {
                         </div>
                         <div>
                             <template v-for="items in sociaLink">
-                                <span> <a class="text-white" href=""> <i class="fa-brands p-2"
+                                <span> <a class="text-white_brand" href=""> <i class="fa-brands p-2"
                                             :class="'' + items.icons"></i>
                                     </a></span>
                             </template>
@@ -94,6 +94,15 @@ li {
     a {
         text-decoration: none;
     }
+}
+
+.text-white {
+    opacity: .6;
+}
+
+.text-white_brand {
+    color: white;
+    font-size: 1.5rem;
 }
 
 .footer_line {
