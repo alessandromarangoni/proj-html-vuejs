@@ -214,4 +214,9 @@ button {
     width: 105%;
     height: 105%;
 }
+
+i:hover {
+    color: white;
+    transform: scale(1.5);
+}
 </style>

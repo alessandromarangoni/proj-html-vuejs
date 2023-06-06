@@ -9,6 +9,7 @@ export default {
     name: "section3",
     data() {
         return {
+            numberOfArticles: 2,
             iCorrente: '',
             background: 'filter_img',
             imgLetsTalk,
@@ -53,7 +54,7 @@ export default {
                 argument: 'When, while lovely valley teems with vapour around meand eridian sun strikes the upper impenetrable foliage of my trees, and but a ...'
             }, {
                 id: 0,
-                img: articleImg1,
+                img: articleImg2,
                 date: 'july 4, 2019',
                 author: 'by paul',
                 title: 'Canadian Consulting Firm acquired by UK Giant',
@@ -67,7 +68,7 @@ export default {
                 argument: 'When, while lovely valley teems with vapour around meand eridian sun strikes the upper impenetrable foliage of my trees, and but a ...'
             }, {
                 id: 0,
-                img: articleImg1,
+                img: articleImg2,
                 date: 'july 4, 2019',
                 author: 'by paul',
                 title: 'Canadian Consulting Firm acquired by UK Giant',
@@ -85,6 +86,9 @@ export default {
         getShortList(shortListSize) {
             return this.articles.slice(0, shortListSize);
         },
+        SeeAllArticles() {
+            this.numberOfArticles = this.articles.length - 1
+        }
     },
 
 }
@@ -128,16 +132,16 @@ export default {
 
                         <div class="d-flex justify-content-between">
                             <h3 class="text-white">THE RECENT NEWS YOU MUST READ IT</h3>
-                            <button class="custom_button1 me-3 text-white">
+                            <button class="custom_button1 me-3 text-white" @click="SeeAllArticles">
                                 <small>WIEW ALL</small>
                             </button>
                         </div>
                     </div>
 
-                    <div class="d-flex justify-content-between mb-5">
-                        <template v-for="(item, i) in getShortList(2)">
-                            <div
-                                class=" m-3 custom_container d-flex bg-primary position-relative flex-column                                                                                                                                                                 align-items-end mb-5">
+                    <div class="d-flex mb-5 flex-wrap">
+                        <template v-for="(item, i) in getShortList(this.numberOfArticles)">
+                            <div class=" m-3 custom_container d-flex position-relative flex-column align-items-end mb-5 custom_articles"
+                                :class="this.numberOfArticles <= 2 ? '' : 'mt-5 pt-5'">
                                 <img :src="item.img" alt="" class="img-fluid"
                                     :class="(this.iCorrente == i) ? this.background : ''">
                                 <div class="text_container bg-white position-absolute" @mouseover="this.changeBg(i)"
@@ -240,6 +244,11 @@ section {
             bottom: 50px;
         }
     }
+}
+
+.custom_articles {
+    max-width: calc(100% / 2 - 3rem);
+
 }
 
 .pre-footer {
