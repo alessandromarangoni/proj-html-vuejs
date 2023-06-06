@@ -10,6 +10,7 @@ export default {
     data() {
         return {
             numberOfArticles: 2,
+            viewButton: 'VIEW ALL',
             iCorrente: '',
             background: 'filter_img',
             imgLetsTalk,
@@ -88,6 +89,20 @@ export default {
         },
         SeeAllArticles() {
             this.numberOfArticles = this.articles.length - 1
+            this.viewButton = 'WIEW LESS'
+        },
+        seeLess() {
+            this.numberOfArticles = 2;
+            this.viewButton = 'VIEW ALL'
+        },
+        seeArticles() {
+            if (this.viewButton == 'VIEW ALL') {
+                this.SeeAllArticles()
+            }
+            else {
+                this.seeLess()
+            }
+
         }
     },
 
@@ -132,8 +147,8 @@ export default {
 
                         <div class="d-flex justify-content-between">
                             <h3 class="text-white">THE RECENT NEWS YOU MUST READ IT</h3>
-                            <button class="custom_button1 me-3 text-white" @click="SeeAllArticles">
-                                <small>WIEW ALL</small>
+                            <button class="custom_button1 me-3 text-white" @click="seeArticles">
+                                <small>{{ this.viewButton }}</small>
                             </button>
                         </div>
                     </div>
