@@ -10,6 +10,9 @@ export default {
     name: "section2",
     data() {
         return {
+            iLeft: 0,
+            iCenter: 1,
+            iRight: 2,
             image,
             cardSlider: [{
                 img: expertImage1,
@@ -27,7 +30,41 @@ export default {
                 imgHover: hoverimage3,
                 title: 'Purinky product',
                 category: 'uncategorized'
+            }, {
+                img: 'https://picsum.photos/790/592',
+                imgHover: hoverimage1,
+                title: 'Purinky ',
+                category: 'uncategorized'
+            }, {
+                img: 'https://picsum.photos/790/592',
+                imgHover: hoverimage1,
+                title: ' product',
+                category: 'uncategorized'
             }],
+        }
+    }, methods: {
+        nextCard() {
+            this.iLeft++
+            this.iCenter++
+            this.iRight++
+            if (this.iRight >= this.cardSlider.length) {
+                this.iLeft = 0,
+                    this.iCenter = 1,
+                    this.iRight = 2
+            }
+        },
+        prevCard() {
+            this.iLeft--
+            this.iCenter--
+            this.iRight--
+            if (this.iRight < 2) {
+                this.iLeft = (this.cardSlider.length - 3),
+                    console.log(this.iLeft)
+                this.iCenter = (this.cardSlider.length - 2),
+                    console.log(this.iCenter)
+                this.iRight = this.cardSlider.length - 1
+                console.log(this.iRight)
+            }
         }
     }
 }
@@ -82,13 +119,14 @@ export default {
                     <div class="d-flex justify-content-between">
                         <h4 class="text-white pt-3">OUR EXPERT TRUSTED CONSULTANT <br>HELP CLIENT</h4>
                         <div class="">
-                            <button><i class="fa-solid fa-arrow-left"></i></button>
-                            <button class="ms-3"><i class="fa-solid fa-arrow-right"></i></button>
+                            <button><i class="fa-solid fa-arrow-left" @click="prevCard()"></i></button>
+                            <button class="ms-3" @click="nextCard"><i class="fa-solid fa-arrow-right"></i></button>
                         </div>
                     </div>
                     <div class="d-flex justify-contet-between ">
-                        <div v-for="item in this.cardSlider">
-                            <div class="position-relative card_wrapper p-3">
+                        <div v-for="(item, i) in this.cardSlider"
+                            :class="i == this.iLeft | i == this.iCenter | i == this.iRight ? 'd-block' : 'd-none'">
+                            <div class=" position-relative card_wrapper p-3">
                                 <div class="position-absolute item">
                                     <img :src="item.img" alt="" class="item_size">
                                     <div class="card_pos">
@@ -153,9 +191,6 @@ button {
     }
 
     .item:hover {
-        img: {
-            opacity: 0;
-        }
 
         .card_pos {
             opacity: 1
@@ -176,7 +211,7 @@ button {
 }
 
 .item_hover_size {
-    width: 101%;
-    height: 101%;
+    width: 105%;
+    height: 105%;
 }
 </style>

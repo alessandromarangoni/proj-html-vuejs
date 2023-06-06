@@ -50,19 +50,12 @@ export default {
         border: 0;
         padding: .5rem 2rem;
         color: #13543f;
+        background-color: $azule;
+        transition: .5s;
 
-        @keyframes scale-in-center {
-            0% {
-                transform: scale(0);
-                background-color: $azule;
-                opacity: 1;
-            }
 
-            100% {
-                transform: scale(1);
-                background-color: $azule;
-                opacity: 1;
-            }
+        &:hover {
+            background-color: red;
         }
     }
 

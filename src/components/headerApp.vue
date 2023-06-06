@@ -8,6 +8,8 @@ export default {
     },
     data() {
         return {
+            windowTop: 0,
+            HeaderColor: 'darker',
             logo: logo,
             headerLink: [{
                 name: "Home",
@@ -29,6 +31,14 @@ export default {
                 link: "/"
             }],
         }
+    }, mounted() {
+        window.addEventListener("scroll", this.onScroll);
+    },
+    methods: {
+        onScroll(e) {
+            this.windowTop = e.target.documentElement.scrollTop;
+            console.log({ top: this.windowTop });
+        }
     }
 }
 // componente header che comprende logo e link di riferimento della pagina e componente jumbotron
@@ -36,7 +46,7 @@ export default {
 <template>
     <header>
         <div class="container-fluid g-0 bg-alert" id="container">
-            <div class="row justify-content-center fixed-top">
+            <div class=" pt-2 row justify-content-center fixed-top" :class="this.windowTop == 0 ? '' : this.HeaderColor">
                 <div class="col-6">
                     <img :src="logo" alt="logo" class="logo">
                 </div>
@@ -55,5 +65,14 @@ export default {
 <style scoped lang="scss">
 .logo {
     width: 80px;
+}
+
+.darker {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1951374299719888) 0%, rgba(0, 0, 0, 0.6069021358543417) 40%, rgba(0, 0, 0, 1) 100%);
+}
+
+li:hover {
+    transform: scale(1.15);
 }
 </style>

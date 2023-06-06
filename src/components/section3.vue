@@ -9,6 +9,8 @@ export default {
     name: "section3",
     data() {
         return {
+            iCorrente: '',
+            background: 'filter_img',
             imgLetsTalk,
             costumerSays: [{
                 img: costumersImg1,
@@ -28,6 +30,7 @@ export default {
                 company: 'amazon inc'
             }],
             articles: [{
+                id: 0,
                 img: articleImg1,
                 date: 'july 4, 2019',
                 author: 'by paul',
@@ -35,14 +38,54 @@ export default {
                 argument: 'When, while lovely valley teems with vapour around meand eridian sun strikes the upper impenetrable foliage of my trees, and but a ...'
             },
             {
+                id: 1,
                 img: articleImg2,
                 date: 'july 19, 2020',
                 author: 'by paul',
                 title: 'Canadian Consulting Firm acquired by UK Giant',
                 argument: 'When, while lovely valley teems with vapour around meand eridian sun strikes the upper impenetrable foliage of my trees, and but a ...'
+            }, {
+                id: 0,
+                img: articleImg1,
+                date: 'july 4, 2019',
+                author: 'by paul',
+                title: 'Canadian Consulting Firm acquired by UK Giant',
+                argument: 'When, while lovely valley teems with vapour around meand eridian sun strikes the upper impenetrable foliage of my trees, and but a ...'
+            }, {
+                id: 0,
+                img: articleImg1,
+                date: 'july 4, 2019',
+                author: 'by paul',
+                title: 'Canadian Consulting Firm acquired by UK Giant',
+                argument: 'When, while lovely valley teems with vapour around meand eridian sun strikes the upper impenetrable foliage of my trees, and but a ...'
+            }, {
+                id: 0,
+                img: articleImg1,
+                date: 'july 4, 2019',
+                author: 'by paul',
+                title: 'Canadian Consulting Firm acquired by UK Giant',
+                argument: 'When, while lovely valley teems with vapour around meand eridian sun strikes the upper impenetrable foliage of my trees, and but a ...'
+            }, {
+                id: 0,
+                img: articleImg1,
+                date: 'july 4, 2019',
+                author: 'by paul',
+                title: 'Canadian Consulting Firm acquired by UK Giant',
+                argument: 'When, while lovely valley teems with vapour around meand eridian sun strikes the upper impenetrable foliage of my trees, and but a ...'
             }]
         }
-    }
+    },
+    methods: {
+        changeBg(i) {
+            this.iCorrente = i
+        },
+        Bgnormal() {
+            this.iCorrente = null
+        },
+        getShortList(shortListSize) {
+            return this.articles.slice(0, shortListSize);
+        },
+    },
 
 }
 </script>
@@ -92,11 +135,13 @@ export default {
                     </div>
 
                     <div class="d-flex justify-content-between mb-5">
-                        <template v-for="item in this.articles">
+                        <template v-for="(item, i) in getShortList(2)">
                             <div
                                 class=" m-3 custom_container d-flex bg-primary position-relative flex-column                                                                                                                                                                 align-items-end mb-5">
-                                <img :src="item.img" alt="" class="img-fluid">
-                                <div class="text_container bg-white position-absolute">
+                                <img :src="item.img" alt="" class="img-fluid"
+                                    :class="(this.iCorrente == i) ? this.background : ''">
+                                <div class="text_container bg-white position-absolute" @mouseover="this.changeBg(i)"
+                                    @mouseout="Bgnormal()">
                                     <div class="pt-2 mx-5">
                                         <span class="text_red "><small>{{ item.date }}</small></span>
                                         <span class="text_red ms-2"><small>{{ ' ' + item.author }}</small></span>
@@ -132,6 +177,10 @@ section {
     background-repeat: no-repeat;
     background-position-x: -10%;
     background-position-y: 60%
+}
+
+.filter_img {
+    filter: grayscale(1);
 }
 
 .custom_button1 {
@@ -185,6 +234,11 @@ section {
         max-width: 90%;
         bottom: 0;
         transform: translate(0, 50%);
+        transition: .5s;
+
+        &:hover {
+            bottom: 50px;
+        }
     }
 }
 
