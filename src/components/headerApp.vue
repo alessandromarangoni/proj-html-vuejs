@@ -68,7 +68,7 @@ export default {
 
 .darker {
     background: rgb(0, 0, 0);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1951374299719888) 0%, rgba(0, 0, 0, 0.6069021358543417) 40%, rgba(0, 0, 0, 1) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6629245448179272) 46%, rgba(0, 0, 0, 1) 88%);
 }
 
 li:hover {
